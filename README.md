@@ -6,6 +6,8 @@ Currently supported platforms:
 - Android (Implemented using Android SQLite API)
 - Desktop (SQLite JDBC from https://bitbucket.org/xerial/sqlite-jdbc/wiki/Home)
 
+A small portion of code has been adapted from the tutorial located at:  http://www.vogella.com/articles/AndroidSQLite/article.html 
+
 Latest build of this extension can be downloaded from: http://bit.ly/gdx-sqlite
 
 ## Extension setup in a Libgdx application:
@@ -31,7 +33,7 @@ Note: This setup assumes that you have properly setup your project as follows (o
 
 ## Example Code:
 ```java
-package com.mrafay.gdxsqlitetest;
+package com.mrafayaleem.gdxsqlitetest;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.sql.Database;
