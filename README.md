@@ -102,7 +102,7 @@ public class DatabaseTest {
 ```
 
 ## Compiling the Code:
-The repository contains all the necessary libraries and files to generate jar files. Three test projects are also added which depend on the respective gdx-sqlite projects to run. To generate jar files from the source code, clone the repository and execute ```ant clean build``` command from the root directory. This will generate jars in their respective folders (in jar directory of each gdx-sqlite project).
+The repository contains all the necessary libraries and files to generate jar files. Three test projects are also added which depend on the respective gdx-sqlite projects to run. To generate jar files from the source code, clone the repository and execute ```ant clean build``` command from the root directory. This will generate jars in their respective folders (in jar directory of each gdx-sqlite project). Note that the gdx-sqlite projects are independent of the test projects.
 
 ## License:
 This extension follows the Apache License version 2.0 (http://www.apache.org/licenses/LICENSE-2.0.html)
