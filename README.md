@@ -20,7 +20,6 @@ Note: This setup assumes that you have properly setup your project as follows (o
 #### For App project:
  - Copy gdx-sqlite.jar into your App project libs folder
  - In the Libraries tab of your Java Build Path, add the gdx-sqlite.jar
- - In the Order and Export tab of your Java Build Path, make sure that gdx-sqlite.jar is checked
 
 #### For AppDesktop project:
  - Copy gdx-sqlite-desktop.jar and sqlite-jdbc-3.7.2.jar into your AppDesktop project libs folder
@@ -28,8 +27,8 @@ Note: This setup assumes that you have properly setup your project as follows (o
 
 #### For AppAndroid project:
  - Copy gdx-sqlite-android.jar into your AppAndroid project libs folder
- - In the Libraries tab of your Java Build Path, add the gdx-sqlite-android.jar
- - In the Order and Export tab of your Java Build Path, make sure that gdx-sqlite-android.jar is checked
+ - In the Libraries tab of your Java Build Path, add the gdx-sqlite-android.jar and gdx-sqlite.jar
+ - In the Order and Export tab of your Java Build Path, make sure that gdx-sqlite-android.jar and gdx-sqlite.jar are checked
 
 ## Example Code:
 ```java
@@ -101,6 +100,10 @@ public class DatabaseTest {
 	}
 }
 ```
+
+## Generating jars from the source code:
+The repository contains all the necessary libraries and files to generate jar files. Three test projects are also added which depend on the respective gdx-sqlite projects to run. To generate jar files from the source code, clone the repository and execute ```ant clean build``` command from the root directory. This will generate jars in their respective folders (in jar directory). Please note that you will require sqlite-jdbc-3.7.2.jar in libs folder of your desktop project.
+
 ## License:
 This extension follows the Apache License version 2.0 (http://www.apache.org/licenses/LICENSE-2.0.html)
 
