@@ -4,8 +4,6 @@ package com.badlogic.gdx.sqlite.desktop;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import com.badlogic.gdx.Gdx;
-
 /** @author M Rafay Aleem */
 public class SQLiteDatabaseHelper {
 

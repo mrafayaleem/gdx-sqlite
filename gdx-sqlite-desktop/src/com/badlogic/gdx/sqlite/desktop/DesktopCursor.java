@@ -8,7 +8,6 @@ import java.sql.SQLException;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.sql.DatabaseCursor;
 import com.badlogic.gdx.sql.DatabaseFactory;
-import com.badlogic.gdx.sql.SQLiteGdxException;
 import com.badlogic.gdx.sql.SQLiteGdxRuntimeException;
 
 /** This is a Desktop implementation of the public interface {@link DatabaseCursor}. Note that columns in JDBC are not zero-based

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="gdx-sqlite" default="build" basedir=".">
+	<target name="build" depends="gdx-sqlite, gdx-sqlite-android, gdx-sqlite-desktop"/>
+	<target name="clean" depends="clean1, clean2, clean3"/>
+
+	<target name="gdx-sqlite">
+		<ant antfile="build.xml" dir="gdx-sqlite" target="jar" />        
+	</target>
+	
+	<target name="gdx-sqlite-android">
+		<ant antfile="build.xml" dir="gdx-sqlite-android" target="jar" />        
+	</target>
+	
+	<target name="gdx-sqlite-desktop">
+		<ant antfile="build.xml" dir="gdx-sqlite-desktop" target="jar" />        
+	</target>
+	
+	<target name="clean1">
+		<ant antfile="build.xml" dir="gdx-sqlite" target="clean" />        
+	</target>
+	
+	<target name="clean2">
+		<ant antfile="build.xml" dir="gdx-sqlite-android" target="clean" />        
+	</target>
+	
+	<target name="clean3">
+		<ant antfile="build.xml" dir="gdx-sqlite-desktop" target="clean" />        
+	</target>
+</project>
+

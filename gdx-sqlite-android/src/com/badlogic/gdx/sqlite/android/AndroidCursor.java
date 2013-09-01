@@ -7,7 +7,6 @@ import android.database.sqlite.SQLiteException;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.sql.DatabaseCursor;
 import com.badlogic.gdx.sql.DatabaseFactory;
-import com.badlogic.gdx.sql.SQLiteGdxException;
 import com.badlogic.gdx.sql.SQLiteGdxRuntimeException;
 
 /** @author M Rafay Aleem */

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="gdx-sqlite">
+    <property environment="env"/>
+    <property name="gdx-sqlite-android.location" value="../gdx-sqlite-android"/>
+    <property name="gdx-sqlite-desktop.location" value="../gdx-sqlite-desktop"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.6"/>
+    <property name="source" value="1.6"/>
+    <property name="classes.dir" value="bin"/>
+    <property name="jar.dir" value="jar"/>
+    <path id="gdx-sqlite.classpath">
+        <pathelement location="bin"/>
+        <pathelement location="libs/gdx.jar"/>
+    </path>
+    <target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="bin"/>
+        <delete dir="${jar.dir}"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="gdx-sqlite.classpath"/>
+        </javac>
+    </target>
+    <target name="jar" depends="build">
+        <mkdir dir="${jar.dir}"/>
+        <jar destfile="${jar.dir}/${ant.project.name}.jar" basedir="${classes.dir}"></jar>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects">
+        <ant antfile="build.xml" dir="${gdx-sqlite-android.location}" inheritAll="false" target="clean"/>
+        <ant antfile="build.xml" dir="${gdx-sqlite-android.location}" inheritAll="false" target="build"/>
+        <ant antfile="build.xml" dir="${gdx-sqlite-desktop.location}" inheritAll="false" target="clean"/>
+        <ant antfile="build.xml" dir="${gdx-sqlite-desktop.location}" inheritAll="false" target="build"/>
+    </target>
+</project>

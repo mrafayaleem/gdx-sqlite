@@ -11,10 +11,8 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.backends.android.AndroidApplication;
 import com.badlogic.gdx.sql.Database;
 import com.badlogic.gdx.sql.DatabaseCursor;
-import com.badlogic.gdx.sql.DatabaseFactory;
 import com.badlogic.gdx.sql.DatabaseManager;
 import com.badlogic.gdx.sql.SQLiteGdxException;
-import com.badlogic.gdx.utils.GdxRuntimeException;
 
 /** @author M Rafay Aleem */
 public class AndroidDatabaseManager implements DatabaseManager {
