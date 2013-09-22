@@ -113,4 +113,4 @@ See License FAQ http://www.apache.org/foundation/licence-FAQ.html for more detai
 Please email any bugs or feature requests at: mrafayaleem at gmail.com
 
 ## Author:
-M. Rafay Aleem
+Mohammad Rafay Aleem
