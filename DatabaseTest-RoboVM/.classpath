@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.robovm.eclipse.ROBOVM_CONTAINER"/>
+	<classpathentry kind="con" path="org.robovm.eclipse.ROBOVM_COCOA_TOUCH_CONTAINER"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/DatabaseTest"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/gdx-sqlite"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/gdx-sqllite-robovm"/>
+	<classpathentry exported="true" kind="lib" path="libs/gdx-backend-robovm.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
