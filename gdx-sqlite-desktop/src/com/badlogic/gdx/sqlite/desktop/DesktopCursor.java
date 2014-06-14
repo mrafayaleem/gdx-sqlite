@@ -4,6 +4,8 @@ package com.badlogic.gdx.sqlite.desktop;
 import java.sql.Blob;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import com.sun.rowset.CachedRowSetImpl;
+import javax.sql.rowset.CachedRowSet;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.sql.DatabaseCursor;
@@ -15,7 +17,11 @@ import com.badlogic.gdx.sql.SQLiteGdxRuntimeException;
  * @author M Rafay Aleem */
 public class DesktopCursor implements DatabaseCursor {
 
-	private ResultSet resultSet = null;
+	/**
+	 * Reference of {@code CachedRowSetImpl} Class Type created for both forward, backward, and random traversing the records, as for ResultSet Class Type 
+	 * sqlite does not support other than forward traversing
+	 */
+	private CachedRowSetImpl resultSet = null;
 
 	@Override
 	public byte[] getBlob (int columnIndex) {
@@ -103,6 +109,8 @@ public class DesktopCursor implements DatabaseCursor {
 		return getRowCount(resultSet);
 	}
 
+
+
 	@Override
 	public void close () {
 		try {
@@ -114,18 +122,30 @@ public class DesktopCursor implements DatabaseCursor {
 	}
 
 	private int getRowCount (ResultSet resultSet) {
+
+	
 		if (resultSet == null) {
 			return 0;
 		}
-		try {
+
+		try { 
+			
 			resultSet.last();
+		
 			return resultSet.getRow();
+		
 		} catch (SQLException e) {
-			// Gdx.app.log(DatabaseFactory.ERROR_TAG, "There was an error counting the number of results", e);
+			Gdx.app.log(DatabaseFactory.ERROR_TAG, "There was an error counting the number of results", e);
 			throw new SQLiteGdxRuntimeException(e);
 		} finally {
-			try {
-				resultSet.beforeFirst();
+			
+		try {
+	
+			
+			resultSet.beforeFirst();
+
+			
+			 
 			} catch (SQLException e) {
 				Gdx.app.log(DatabaseFactory.ERROR_TAG, "There was an error counting the number of results", e);
 			}
@@ -133,7 +153,14 @@ public class DesktopCursor implements DatabaseCursor {
 	}
 
 	public void setNativeCursor (ResultSet resultSetRef) {
-		resultSet = resultSetRef;
+		try {
+			resultSet = new CachedRowSetImpl();
+			resultSet.populate (resultSetRef);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
 
 }
