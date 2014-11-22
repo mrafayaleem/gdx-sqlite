@@ -30,6 +30,14 @@ Note: This setup assumes that you have properly setup your project as follows (o
  - In the Libraries tab of your Java Build Path, add the gdx-sqlite-android.jar and gdx-sqlite.jar
  - In the Order and Export tab of your Java Build Path, make sure that gdx-sqlite-android.jar and gdx-sqlite.jar are checked
 
+#### For AppRoboVM project:
+- Add following lines to robovm.xml
+```
+<forceLinkClasses>
+	<pattern>com.badlogic.gdx.sqlite.robovm.RobovmDatabaseManager</pattern>
+	<pattern>SQLite.**</pattern>
+```
+
 ## Example Code:
 ```java
 package com.mrafayaleem.gdxsqlitetest;
