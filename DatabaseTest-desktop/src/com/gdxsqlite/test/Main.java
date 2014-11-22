@@ -10,7 +10,6 @@ public class Main {
 		config.width = 640;
 		config.height = 480;
 		config.title = "DatabaseTest";
-		config.useGL20 = true;
 		config.forceExit = false;
 		new LwjglApplication(new DatabaseTest(), config);
 	}
