@@ -1,5 +1,7 @@
 # gdx-sqlite
 
+Note: This project is no more actively maintained. Please check out the various forks [here](https://github.com/mrafayaleem/gdx-sqlite/network) to follow up with active developments around this repository.
+
 gdx-sqlite is a cross-platform Libgdx extension for SQLite database handling. The extension abstracts databse handling to provide a unified method to handle database transacitons across multiple platforms while also adding SQLite support for desktop version of Libgdx application.
 
 Currently supported platforms:
